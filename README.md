@@ -140,12 +140,73 @@ The default is 1600×900 (2× HiDPI). For additional scale options, use
 See [docs/GUIDE.md](docs/GUIDE.md) for the full step-by-step guide including what
 doesn't work and why, with the root cause of the display fix explained.
 
-## Credits
+## Why this repo exists
 
-- [OpenCore](https://github.com/acidanthera/OpenCorePkg) — BSD 3-Clause
-- [WhateverGreen](https://github.com/acidanthera/WhateverGreen) — BSD 3-Clause
-- [Lilu](https://github.com/acidanthera/Lilu) — BSD 3-Clause
-- [VirtualSMC](https://github.com/acidanthera/VirtualSMC) — BSD 3-Clause
-- [VoodooI2C](https://github.com/VoodooI2C/VoodooI2C) — GPL 2.0
-- [syncmaster851/darkvoid-XPS9360-macOS](https://github.com/syncmaster851/darkvoid-XPS9360-macOS) — reference for DVMT/stolenmem values
-- [Dortania OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)
+I didn't figure any of this out from scratch. I followed guides, read other people's
+configs, hit walls that those guides didn't warn me about, and eventually got it working.
+
+This repo is here so the next person with a 9360 doesn't spend days on the same dead
+ends I did. The EFI in this repo is a working snapshot as of May 2026. The docs try to
+explain not just what to do, but *why*, and — just as importantly — what *doesn't* work
+and why, so you don't waste time repeating experiments that have already failed.
+
+Everything here is built on the work of people who spent far more time on macOS
+internals, kext development, and OpenCore than I ever will. I am just someone who
+needed a laptop to run macOS and left a trail of notes behind.
+
+See [docs/HISTORY.md](docs/HISTORY.md) for the full story of what was tried before
+this config worked — including a failed Monterey chapter.
+
+---
+
+## Credits and thanks
+
+### The tools this EFI depends on
+
+Without these projects there is no Hackintosh. Full stop.
+
+| Project | Authors | What it does here |
+|---------|---------|-------------------|
+| [OpenCore](https://github.com/acidanthera/OpenCorePkg) | Acidanthera | Bootloader. Everything runs through this. |
+| [Lilu](https://github.com/acidanthera/Lilu) | Acidanthera | Kernel patcher that WEG, AppleALC, and most kexts depend on |
+| [WhateverGreen](https://github.com/acidanthera/WhateverGreen) | Acidanthera | Intel framebuffer patches — the GPU working at all is this kext |
+| [AppleALC](https://github.com/acidanthera/AppleALC) | Acidanthera | Audio — ALC256 with layout-id 56 |
+| [VirtualSMC](https://github.com/acidanthera/VirtualSMC) | Acidanthera | SMC emulation, battery, sensors |
+| [VoodooI2C](https://github.com/VoodooI2C/VoodooI2C) | alexandred and contributors | I2C trackpad support |
+| [VoodooPS2Controller](https://github.com/acidanthera/VoodooPS2) | Acidanthera | Keyboard |
+| [AirportBrcmFixup](https://github.com/acidanthera/AirportBrcmFixup) | Acidanthera | Broadcom WiFi and Bluetooth |
+| [CPUFriend](https://github.com/acidanthera/CPUFriend) | Acidanthera | CPU power management |
+| [NVMeFix](https://github.com/acidanthera/NVMeFix) | Acidanthera | NVMe power management |
+| [BrightnessKeys](https://github.com/acidanthera/BrightnessKeys) | Acidanthera | Fn+F6/F7 brightness keys |
+
+### Guides and references that made this possible
+
+**[Dortania OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)**
+The definitive guide. I could not have started without it. If you are setting up a
+Hackintosh for the first time, read this first, read it carefully, and read it again
+when something breaks.
+
+**[syncmaster851/darkvoid-XPS9360-macOS](https://github.com/syncmaster851/darkvoid-XPS9360-macOS)**
+The same platform, same panel. Finding this repo is what broke the display deadlock
+for me. Their config used 80MB stolenmem with 192MB DVMT — seeing that value was the
+clue that pointed directly at the root cause. I owe this repo the display working.
+
+**[macadmin-scripts](https://github.com/munki/macadmin-scripts)** (Greg Neagle / Munki project)
+Used to download a vanilla macOS installer outside of the App Store during the
+install process. If you don't have a Mac handy to create the installer, this is
+how you get one.
+
+**[one-key-hidpi](https://github.com/xzhih/one-key-hidpi)**
+For enabling additional HiDPI scale options beyond the default 1600×900.
+
+### A note on the community
+
+The Hackintosh community has been figuring this out quietly for years, across forums,
+Reddit threads, GitHub issues, and Discord servers. Most of the knowledge that got me
+here came from people who took the time to write up what worked and what didn't.
+Named or not, thank you.
+
+---
+
+*Licenses: OpenCore, Lilu, WhateverGreen, VirtualSMC, AppleALC, AirportBrcmFixup,
+CPUFriend, NVMeFix, BrightnessKeys — BSD 3-Clause. VoodooI2C — GPL 2.0.*
