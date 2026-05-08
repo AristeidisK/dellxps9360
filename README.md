@@ -32,7 +32,7 @@ OpenCore EFI for running macOS Ventura 13.7.8 on the Dell XPS 13 9360 with full 
 | USB | ✅ Working |
 | NVMe | ✅ Working |
 | Sleep / wake | ⚠️ Partial — system sleeps, display blank on wake |
-| Touchscreen | ✅ Working (disabled by default — enable VoodooI2CHID in config) |
+| Touchscreen | ✅ Working |
 | SD card reader | ❌ Not working |
 | Fingerprint reader | ❓ Untested (Validity Inc. scanner, no known macOS driver) |
 

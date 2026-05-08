@@ -116,7 +116,7 @@ As of May 2026, the config in this repo is fully working on Ventura 13.7.8:
 - GPU acceleration (Metal 3, 1536MB VRAM) ✅
 - QHD+ display at 1600×900 HiDPI ✅
 - Audio, WiFi, Bluetooth, battery, trackpad, keyboard, brightness keys ✅
-- Touchscreen: works (disabled by default in config — enable VoodooI2CHID) ✅
+- Touchscreen ✅
 - Sleep/wake: system sleeps correctly, display stays blank on wake ⚠️
 
 The sleep/wake display issue is the one known remaining problem.
