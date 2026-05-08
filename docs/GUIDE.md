@@ -166,9 +166,10 @@ sudo cp "/Volumes/EFI 1/EFI/OC/config.plist" /Volumes/EFI/EFI/OC/config.plist
   powers the panel on, but the display stays blank (login screen does not reappear).
   First thing to try: add `darkwake=4` to boot-args.
 
-- **Touchscreen:** Disabled in config. VoodooI2CHID is present and it does work,
-  but it's disabled by default as it interferes with the trackpad in some scenarios.
+- **Touchscreen:** Works. Disabled by default because it can interfere with the
+  trackpad in some scenarios. To enable, set `VoodooI2CHID` to enabled in the
+  `Kernel > Add` section of config.plist.
 
 - **SD card reader:** Not working, no driver available for macOS.
 
-- **Fingerprint reader:** Validity Inc. scanner, no macOS support.
+- **Fingerprint reader:** Untested. Validity Inc. scanner — no known macOS driver exists.
