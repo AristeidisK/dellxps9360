@@ -119,4 +119,4 @@ As of May 2026, the config in this repo is fully working on Ventura 13.7.8:
 - Touchscreen ✅
 - Sleep/wake: system sleeps correctly, display stays blank on wake ⚠️
 
-The sleep/wake display issue is the one known remaining problem.
+The sleep/wake display issue is the one known remaining problem. Everything else works — including the touchscreen and fingerprint reader, which were assumed not to work.

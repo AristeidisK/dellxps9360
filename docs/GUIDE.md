@@ -170,4 +170,4 @@ sudo cp "/Volumes/EFI 1/EFI/OC/config.plist" /Volumes/EFI/EFI/OC/config.plist
 
 - **SD card reader:** Not working, no driver available for macOS.
 
-- **Fingerprint reader:** Untested. Validity Inc. scanner — no known macOS driver exists.
+- **Fingerprint reader:** Works.
