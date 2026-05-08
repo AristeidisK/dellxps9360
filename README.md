@@ -206,6 +206,14 @@ Reddit threads, GitHub issues, and Discord servers. Most of the knowledge that g
 here came from people who took the time to write up what worked and what didn't.
 Named or not, thank you.
 
+### A note on the times we live in
+
+In the spirit of times ahead, I must acknowledge that I spent a week with Claude,
+ChatGPT, and Gemini arguing with me. All three helped in different ways and at
+different moments — and all three, at various points, confidently suggested things
+that were completely wrong. That is also part of the record. They are mentioned here
+for their contribution, whatever it was.
+
 ---
 
 *Licenses: OpenCore, Lilu, WhateverGreen, VirtualSMC, AppleALC, AirportBrcmFixup,
